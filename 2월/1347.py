@@ -11,4 +11,3 @@ for _ in range(int(input())):
         else:
             card += i
     print(''.join(card))
-    
