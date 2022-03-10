@@ -6,3 +6,4 @@ while n!=1:
         print(cnt)
     else:
         cnt+=1
+       
