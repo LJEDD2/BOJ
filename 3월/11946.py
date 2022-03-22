@@ -1,6 +1,6 @@
 n ,m ,q = map(int, input().split())
 # 입력
-rank = [[[False,0] for _ in range(m+1)] for _ in range(n+1)] # 정답 시간과 오답 패널티를 저장할 배열
+rank = [[[301,0] for _ in range(m+1)] for _ in range(n+1)] # 정답 시간과 오답 패널티를 저장할 배열
 for _ in range(q):
     time , team, Id, result = input().split()
     time = int(time)
@@ -8,7 +8,7 @@ for _ in range(q):
     Id = int(Id)
 
     # 처음 해결한 문제만 점수 인정
-    if rank[team][Id][0] == False:
+    if rank[team][Id][0] == 301:
         if result == "AC":
             rank[team][Id][0] = time
         else:
@@ -18,7 +18,7 @@ grade = [[i,0,0] for i in range(n+1)] #teamId , solved, total_time
 
 for team in range(1,n+1):
     for Id in range(1, m+1):
-        if rank[team][Id][0] != False:
+        if rank[team][Id][0] != 301:
             grade[team][1] += 1
             grade[team][2] += rank[team][Id][0]
             grade[team][2] += rank[team][Id][1]
