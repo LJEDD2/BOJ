@@ -32,5 +32,6 @@ while count > 0:
             prev, board[x][y] = board[x][y], now
             now = prev
     count-=1
+    
 for i in board:
     print(*i)
