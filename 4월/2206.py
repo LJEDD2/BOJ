@@ -12,20 +12,20 @@ def bfs():
     visited[0][0][0] = 1
 
     while queue:
-        x,y,crashed = queue.popleft()
+        x,y,cnt = queue.popleft()
         if x == n-1 and y == m-1:
-            print(visited[x][y][crashed])
+            print(visited[x][y][cnt])
             #for i in visited: print(*i)
             exit()
         for d_x,d_y in zip(dx,dy):
             nx = x + d_x
             ny = y + d_y
-            if OOB(nx,ny) and not visited[nx][ny][crashed]:
+            if OOB(nx,ny) and not visited[nx][ny][cnt]:
                 if board[nx][ny] == '0':
-                    queue.append((nx,ny,crashed))
-                    visited[nx][ny][crashed] = visited[x][y][crashed] + 1
+                    queue.append((nx,ny,cnt))
+                    visited[nx][ny][cnt] = visited[x][y][cnt] + 1
 
-                if board[nx][ny] == '1' and crashed == 0:
+                if board[nx][ny] == '1' and cnt == 0:
                     queue.append((nx,ny,1))
                     visited[nx][ny][1] = visited[x][y][0] + 1
 
