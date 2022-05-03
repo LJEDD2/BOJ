@@ -1,3 +1,4 @@
+n,m = map(int,input().split())
 nlist = sorted(list(map(int,input().split())))
 visited = [0]*n
 result = []
