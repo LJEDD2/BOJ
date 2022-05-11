@@ -1,16 +1,10 @@
 T = int(input())
-A,B,C = 300,60,10
+A,B,C = 0,0,0
 
-if T % C:
+if T % 10:
     print(-1)
 else:
-    button = [0,0,0]
-    if T >= A:
-        button[0] = T//A
-        T %= A
-    if T >= B:
-        button[1] = T//B
-        T %= B
-        button[2] = T//C
-
-print(*button)
+    A = T//300
+    B = (T%300)//60
+    C = (T%300)%60//10
+    print(A,B,C)
