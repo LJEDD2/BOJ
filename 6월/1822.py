@@ -1,6 +1,0 @@
-n,m = map(int,input().split())
-n_list = set(list(map(int,input().split())))
-m_list = set(list(map(int,input().split())))
-n = sorted(n_list-m_list)
-print(len(n))
-print(*n)
